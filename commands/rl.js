@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
         return message.reply(`no u`), console.log(`${message.member.user.tag} (${message.member.user.id}) isnt the owner smfh`);
     }
     if(!args || args.length < 1) {
-        return message.reply(`, fr?`), console.log(`${message.member.user.tag} (${message.member.user.id}), fr? gib me sth or die`);
+        return message.reply(`fr?`), console.log(`${message.member.user.tag} (${message.member.user.id}), fr? gib me sth or die`);
     }
     const commandName = args[0];
     if(!client.commands.has(args)) {
@@ -14,6 +14,6 @@ exports.run = (client, message, args) => {
     client.commands.delete(commandName);
     const props = require(`./${commandName}.js`);
     client.commands.set(commandName, props);
-    message.reply(`<@${message.member.id}>, *loads gun* got it`);
+    message.reply(`*loads gun* got it`);
     console.log(`bui bui ${message.member.user.tag} (${message.member.user.id}) reloaded ${args}`);
     };
